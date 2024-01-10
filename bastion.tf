@@ -31,3 +31,8 @@ module "ec2-instance" {
   subnet_id = element(module.vpc.public_subnets, 0)  #placing in the first subnet in the VPC
   vpc_security_group_ids = [ module.sg-allow-ssh.security_group_id ]
 }
+
+#Adding output to produce the public IP address of the bastion host
+output "bastion_host_public_ip" {
+  value = module.ec2-instance.public_ip
+}
