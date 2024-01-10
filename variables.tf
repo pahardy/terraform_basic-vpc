@@ -20,17 +20,17 @@ variable "vpc_availability_zones" {
 variable "vpc_public_subnets" {
   description = "VPC public subnets"
   type = list(string)
-  default = ["10.0.0.0/20", "10.0.16.0/20", "10.0.32.0/20"]
+  default = [ "10.0.1.0/24", "10.0.2.0/24", "10.0.3.0/24" ]
 }
 
 variable "vpc_private_subnets" {
   description = "VPC private subnets"
   type = list(string)
-  default = ["10.0.48.0/20", "10.0.64.0/20", "10.0.80.0/20"]
+  default = [ "10.0.4.0/24", "10.0.5.0/24", "10.0.6.0/24" ]
 }
 
 variable "vpc_db_subnets" {
   description = "VPC DB subnets"
   type = list(string)
-  default = ["10.0.96.0/20", "10.0.112.0/20", "10.128.0.0/20"]
+  default = [ "10.0.7.0/24", "10.0.8.0/24", "10.0.9.0/24" ]
 }
