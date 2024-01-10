@@ -41,5 +41,6 @@ module "vpc" {
   vpc_tags = {
     Name = "basic-terraform-vpc"
   }
-
+  #Give instances launched into the public subnet a public IP
+  map_public_ip_on_launch = true
 }
