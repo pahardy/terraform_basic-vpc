@@ -28,6 +28,6 @@ module "ec2-instance" {
   name = "bastion-host"
   ami = "ami-0a2e7efb4257c0907"  #Ubuntu AMI
   key_name = data.aws_key_pair.MyKeyPair.key_name
-  subnet_id = var.vpc_public_subnets[0]  #placing in the first subnet in the VPC
+  subnet_id = element(module.vpc.public_subnets, 0)  #placing in the first subnet in the VPC
   vpc_security_group_ids = [ module.sg-allow-ssh.security_group_id ]
 }
